@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+
+  <title>Serial Data Reader</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('serialData', (data) => {
+      document.getElementById('serial-output').textContent = data;
+    })
+  </script>
+</head>
+<body>
+  <h1>Serial Data</h1>
+  <pre id="serial-output"></pre>
+</body>
+</html>
